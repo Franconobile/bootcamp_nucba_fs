@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Cosas principales, texto, body, creo yo! */
+
+body {
+    background: rgb(0,0,0);
+    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(29,5,20,1) 100%);
+}
+
+h1 {
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    text-align: center;
+    letter-spacing: 5px;
+    line-height: 5em;
+}
+
+/* Propiedades del cubo! */
+
+.cubazos {
+    margin: auto;
+    perspective: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.cubito{
+    width: 200px;
+    height: 200px;
+    z-index: 3;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateY(50deg);
+    animation: girateCubo 5s infinite linear;
+}
+
+/* Animación rotación */
+
+@keyframes girateCubo{
+    from{
+        transform: rotateY(0deg);
+    }
+    to{
+        transform: rotateY(360deg);
+    }
+}
+
+/* Propiedades aburridas pero importantes */
+
+.cara{
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    animation-name: cuboColor;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+#uno{
+    background-color: rgb(226, 19, 175); 
+    transform: translateZ(110px);
+}
+#dos{
+    background-color: rgb(226, 19, 175); 
+    transform: translateX(110px) rotateY(90deg);
+}
+#tres{
+    background-color: rgb(226, 19, 175); 
+    transform: translateZ(-110px);
+}
+#cuatro{
+    background-color: rgb(226, 19, 175); 
+    transform: translateX(-110px) rotateY(90deg);
+}
+#cinco{
+    background-color: rgb(226, 19, 175); 
+    transform: translateY(-110px) rotateX(90deg);
+}
+#seis{
+    background-color: rgb(226, 19, 175); 
+    transform: translateY(110px) rotateX(90deg);
+}
+
+/* Colores divertidos! */
+
+@keyframes cuboColor {
+    0%  {background-color: rgba(255, 119, 221, 0.596);}
+    25% {background-color: rgba(140, 200, 255, 0.596);}
+    50% {background-color: rgba(103, 94, 228, 0.596);}
+    75% {background-color: rgba(124, 104, 238, 0.596);}
+    100%{background-color: rgba(102, 205, 171, 0.596);}
+} 
+
